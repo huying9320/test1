@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./swiper/swiper.min.css">
+    <link rel="stylesheet" href="./swiper/animate.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="swiper-container tab-con">
+            <div class="swiper-wrapper tab-wrap">
+                <div class="swiper-slide"><img src="./img/1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./img/2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./img/3.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./img/4.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <script src="./swiper/swiper.min.js"></script>
+    <script>
+        var list = document.querySelector('.list');
+        var lis = document.querySelectorAll('.swiper-slide');
+        console.log(lis)
+        var swiper = new Swiper('.tab-con', {
+            autoplay: true,
+            on: {
+                onclick: true
+            },
+            loop: true
+        })
+        lis.forEach(function(file) {
+            console.log(swiper)
+            var ind = this.innerText * 1 - 1
+            console.log(ind)
+            swiper.activeIndex = ind
+        })
+    </script>
+</body>
+
+</html>
